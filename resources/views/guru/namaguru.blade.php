@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+berikut adalah nama guru<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,28 +8,28 @@
 <body>
     <table>
         <thead>
-            <th>Nama</th>
+            <th>Nama Guru</th>
             <th>Alamat</th>
         </thead>
         <tbody>
             <tr>
-                <td>Fahmi</td>
+                <td>Fulan</td>
                 <td>Karang Anyar</td>
             </tr>
             <tr>
-                <td>Fahmi</td>
+                <td>Fulan</td>
                 <td>Karang Anyar</td>
             </tr>
             <tr>
-                <td>Fahmi</td>
+                <td>Fulan</td>
                 <td>Karang Anyar</td>
             </tr>
             <tr>
-                <td>Fahmi</td>
+                <td>Fulan</td>
                 <td>Karang Anyar</td>
             </tr>
             <tr>
-                <td>Fahmi</td>
+                <td>Fulan</td>
                 <td>Karang Anyar</td>
             </tr>
         </tbody>

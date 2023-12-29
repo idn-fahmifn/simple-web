@@ -22,6 +22,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/alamat-siswa', function() {
-    return view('siswa.alamat');
-});
+Route::get('nama', [App\Http\Controllers\SiswaController::class, 'nama']);
+Route::get('alamat', [App\Http\Controllers\SiswaController::class, 'alamat']);
+
+Route::get('nama-guru', [App\Http\Controllers\GuruController::class, 'nama']);
+
+Route::resource('/makanan', App\Http\Controllers\MakananController::class);
