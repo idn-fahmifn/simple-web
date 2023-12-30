@@ -8,13 +8,13 @@
                 <div class="card-header">Tambah Pesanan</div>
 
                 <div class="card-body">
-                    <form action="{{route('pesanan.store')}}" method="post">
+                    <form action="{{route('pesanan.update', $pesanan->id)}}" method="post">
                         @csrf
                         {{method_field('PUT')}}
                         <div class="form-group">
                             <label>Nama Makanan</label>
                             <select name="id_makanan" required class="form-control">
-                                <option value="">Silakan Pilih</option>
+                                <option value="{{$pesanan->id_makanan}}">{{$pesanan->makanan->nama_makanan}}</option>
                                 @foreach($makanan as $row)
                                 <option value="{{$row->id}}">{{$row->nama_makanan}}</option>
                                 @endforeach

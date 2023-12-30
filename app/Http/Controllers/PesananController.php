@@ -55,9 +55,11 @@ class PesananController extends Controller
      * @param  \App\Models\Pesanan  $pesanan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pesanan $pesanan)
+    public function edit($id)
     {
-        //
+        $pesanan = Pesanan::find($id);
+        $makanan = Makanan::all();
+        return view('pesanan.edit', compact('pesanan','makanan'));
     }
 
     /**
@@ -67,9 +69,13 @@ class PesananController extends Controller
      * @param  \App\Models\Pesanan  $pesanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pesanan $pesanan)
+    public function update(Request $request,$id)
     {
-        //
+        $pesanan = Pesanan::find($id);
+        $data = $request->all();
+        $pesanan->update($data);
+        return redirect('/pesanan');
+        
     }
 
     /**
