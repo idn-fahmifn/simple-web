@@ -28,3 +28,4 @@ Route::get('alamat', [App\Http\Controllers\SiswaController::class, 'alamat']);
 Route::get('nama-guru', [App\Http\Controllers\GuruController::class, 'nama']);
 
 Route::resource('/makanan', App\Http\Controllers\MakananController::class);
+Route::resource('/pesanan', App\Http\Controllers\PesananController::class);

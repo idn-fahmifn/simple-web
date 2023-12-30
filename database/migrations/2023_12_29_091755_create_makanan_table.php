@@ -14,7 +14,7 @@ class CreateMakananTable extends Migration
     public function up()
     {
         Schema::create('makanan', function (Blueprint $table) {
-            $table->id(); //tipedata : inetger, autoincrement
+            $table->increments('id'); //tipedata : inetger, autoincrement
             $table->string('nama_makanan');
             $table->string('asal_makanan');
             $table->timestamps();
