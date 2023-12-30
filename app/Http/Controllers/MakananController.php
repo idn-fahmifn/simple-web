@@ -47,9 +47,10 @@ class MakananController extends Controller
      * @param  \App\Models\Makanan  $makanan
      * @return \Illuminate\Http\Response
      */
-    public function show(Makanan $makanan)
+    public function show($id)
     {
-        //
+        $makanan = Makanan::find($id);
+        return view('makanan.detail', compact('makanan'));
     }
 
     /**
@@ -58,9 +59,10 @@ class MakananController extends Controller
      * @param  \App\Models\Makanan  $makanan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Makanan $makanan)
+    public function edit($id)
     {
-        //
+        $makanan = Makanan::find($id);
+        return view('makanan.edit', compact('makanan'));
     }
 
     /**
@@ -70,9 +72,12 @@ class MakananController extends Controller
      * @param  \App\Models\Makanan  $makanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Makanan $makanan)
+    public function update(Request $request, $id)
     {
-        //
+        $makanan = Makanan::find($id);
+        $data = $request->all();
+        $makanan->update($data);
+        return redirect('/makanan');
     }
 
     /**
@@ -81,8 +86,10 @@ class MakananController extends Controller
      * @param  \App\Models\Makanan  $makanan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Makanan $makanan)
+    public function destroy($id)
     {
-        //
+        $data = Makanan::find($id);
+        $data->delete();
+        return back();
     }
 }

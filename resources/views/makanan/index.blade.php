@@ -8,31 +8,39 @@
                 <div class="card-header">Nama Makanan</div>
 
                 <div class="card-body">
-                   <div class="table-responsive p-2">
-                    <div class="m-2">
-                        <a href="/makanan/create" class="btn btn-primary">Tambah</a>
-                    </div>
-                    <table class="table table-dark table-striped">
-                        <thead>
-                            <th>Nama Makanan</th>
-                            <th>Asal Daerah</th>
-                            <th>Action</th>
-                        </thead>
-                        <tbody>
-                            @foreach($makanan as $row)
+                    <div class="table-responsive p-2">
+                        <div class="m-2">
+                            <a href="/makanan/create" class="btn btn-primary">Tambah</a>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <th>Nama Makanan</th>
+                                <th>Asal Daerah</th>
+                                <th>Action</th>
+                            </thead>
+                            <tbody>
+                                @foreach($makanan as $row)
                                 <tr>
                                     <td>{{$row->nama_makanan}}</td>
                                     <td>{{$row->asal_makanan}}</td>
                                     <td>
-                                        <a href="#" class="btn btn-warning">Ubah</a>
-                                        <a href="#" class="btn btn-danger">Hapus</a>
-                                        <a href="" class="btn btn-info">Detail</a>
+
+                                        <form action="{{route('makanan.destroy', $row->id)}}" method="post">
+                                            @csrf
+                                            {{method_field('DELETE')}}
+                                            <button type="submit" class="btn btn-danger"
+                                                onclick="return confirm('Apakah kamu mau hapus?')">Hapus</button>
+                                            <a href="{{route('makanan.edit', $row->id)}}"
+                                                class="btn btn-warning">Ubah</a>
+                                            <a href="{{route('makanan.show', $row->id)}}"
+                                                class="btn btn-info">Detail</a>
+                                        </form>
                                     </td>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                   </div>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
